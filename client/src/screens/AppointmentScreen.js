@@ -16,7 +16,7 @@ const AppointmentScreen = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [bookedSlots, setBookedSlots] = useState([]);
-
+  const [reload, setReload] = useState(false);
   const { user } = useContext(UserContext);
 
   const handleTimeSelect = (time) => {
@@ -36,6 +36,7 @@ const AppointmentScreen = () => {
         const res = await appointmentApi.bookedSlots(
           selectedDate.toISOString().split("T")[0]
         );
+        console.log(res.data.bookedSlots);
         setBookedSlots(res.data.bookedSlots || []);
       } catch (err) {
         toast.error(
@@ -45,7 +46,7 @@ const AppointmentScreen = () => {
     };
 
     fetchBookedSlots();
-  }, [selectedDate]);
+  }, [selectedDate, reload]);
   if (!user) {
     return (
       <h2 className="error-message">
@@ -85,8 +86,9 @@ const AppointmentScreen = () => {
       });
 
       toast.success("✅ Appointment booked successfully!");
-      setSelectedDate(new Date());
+      setSelectedDate(selectedDate);
       setSelectedTime(null);
+      setReload(!reload);
     } catch (err) {
       toast.error(
         err.response?.data?.message || "An unexpected error occurred."
