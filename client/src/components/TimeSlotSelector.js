@@ -6,7 +6,7 @@ const TimeSlotSelector = ({ onTimeSelect, bookedSlots = [] }) => {
   const [selectedTime, setSelectedTime] = useState(null);
 
   const timeSlots = {
-    Night: ["1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM"],
+    Night: [ "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM"],
     Morning: [
       "6:00 AM",
       "7:00 AM",
