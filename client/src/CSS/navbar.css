@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box
+}
+
+#search {
+    outline: none;
+    border: none;
+    display: inline-block
+}
+
+.burgundy {
+    color: rgb(153, 40, 59)
+}
+
+.orange {
+    color: orange
+}
+
+
+
+nav {
+    padding: 500px 500px
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar .ml-auto {
+    margin-left: auto;
+}
+
+
+
+.username-label {
+    color: rgb(153, 40, 59);
+    font-size: 18px;
+    font-weight: italic;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.appointment-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.appointment-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
