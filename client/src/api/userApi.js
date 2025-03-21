@@ -1,9 +1,9 @@
 import http from "./http";
 
 const createUser = (data) =>
-  http.post(`${process.env.REACT_APP_BASE_URL}/user/register`, data);
+  http.post(`https://appointment-system-fawn.vercel.app/api/user/register`, data);
 const loginUser = (data) =>
-  http.post(`${process.env.REACT_APP_BASE_URL}/user/login`, data);
+  http.post(`https://appointment-system-fawn.vercel.app/api/user/login`, data);
 
 const usersApi = { createUser, loginUser };
 export default usersApi;
