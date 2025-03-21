@@ -6,7 +6,7 @@ const TimeSlotSelector = ({ onTimeSelect, bookedSlots = [] }) => {
   const [selectedTime, setSelectedTime] = useState(null);
 
   const timeSlots = {
-    Night: ["12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM"],
+    Night: ["1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM"],
     Morning: [
       "6:00 AM",
       "7:00 AM",
@@ -40,12 +40,15 @@ const TimeSlotSelector = ({ onTimeSelect, bookedSlots = [] }) => {
     Evening: <FaRegSun size={30} />,
   };
 
-  // Function to convert "12:00 PM" format to 24-hour number
   const convertTo24Hour = (time) => {
-    const [hour, period] = time.split(/:| /);
+    const [timePart, period] = time.split(" ");
+    const [hour] = timePart.split(":");
     let hourNum = parseInt(hour, 10);
-    if (period === "PM" && hourNum !== 12) hourNum += 12;
-    if (period === "AM" && hourNum === 12) hourNum = 0;
+    if (period === "PM" && hourNum !== 12) {
+      hourNum += 12;
+    } else if (period === "AM" && hourNum === 12) {
+      hourNum = 0;
+    }
     return hourNum;
   };
 
@@ -64,7 +67,8 @@ const TimeSlotSelector = ({ onTimeSelect, bookedSlots = [] }) => {
           </div>
           <div className="time-buttons">
             {slots.map((slot) => {
-              const isBooked = bookedSlots.includes(convertTo24Hour(slot));
+              const slot24 = convertTo24Hour(slot);
+              const isBooked = bookedSlots.some((bs) => Number(bs) === slot24);
               return (
                 <button
                   key={slot}
