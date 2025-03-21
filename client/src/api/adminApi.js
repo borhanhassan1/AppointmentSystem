@@ -1,19 +1,19 @@
 import http from "./http";
 
 const createDoctor = (data) =>
-  http.post(`${process.env.REACT_APP_BASE_URL}/admin/create-doctor`, data);
+  http.post(`https://appointment-system-fawn.vercel.app/api/admin/create-doctor`, data);
 
 const deleteUser = (id) =>
-  http.delete(`${process.env.REACT_APP_BASE_URL}/admin/delete-user/${id}`);
+  http.delete(`https://appointment-system-fawn.vercel.app/api/admin/delete-user/${id}`);
 
 const deleteAppointment = (id) =>
   http.delete(
-    `${process.env.REACT_APP_BASE_URL}/admin/delete-appointment/${id}`
+    `https://appointment-system-fawn.vercel.app/api/admin/delete-appointment/${id}`
   );
 const getUsers = () =>
-  http.get(`${process.env.REACT_APP_BASE_URL}/admin/users`);
+  http.get(`https://appointment-system-fawn.vercel.app/api/admin/users`);
 const getAppointments = () =>
-  http.get(`${process.env.REACT_APP_BASE_URL}/admin/appointments`);
+  http.get(`https://appointment-system-fawn.vercel.app/api/admin/appointments`);
 
 const adminApi = {
   createDoctor,
