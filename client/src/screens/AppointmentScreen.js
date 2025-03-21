@@ -128,7 +128,7 @@ const AppointmentScreen = () => {
             <strong>{selectedDate?.toDateString()}</strong> at{" "}
             <strong>{selectedTime}</strong>?
           </p>
-          <div className="modal-buttons">
+          <div className="modal-buttons"> 
             <button
               onClick={confirmAppointment}
               className="confirm-btn"
