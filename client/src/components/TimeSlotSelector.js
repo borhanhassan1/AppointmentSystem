@@ -58,7 +58,7 @@ const TimeSlotSelector = ({ onTimeSelect, bookedSlots = [] }) => {
   };
 
   return (
-    <div className="time-slot-container">
+    <div className="time-slot-container">  
       {Object.entries(timeSlots).map(([period, slots]) => (
         <div key={period} className="time-group">
           <div className="time-header">
@@ -72,7 +72,7 @@ const TimeSlotSelector = ({ onTimeSelect, bookedSlots = [] }) => {
               return (
                 <button
                   key={slot}
-                  className={`time-slot ${
+                  className={`time-slot ${  
                     selectedTime === slot ? "selected" : ""
                   }`}
                   onClick={() => !isBooked && handleSelect(slot)}
