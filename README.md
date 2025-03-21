@@ -2,7 +2,7 @@ Medical Appointment System
 
 
 Patient Email:
-    username: borhan
+    username: borhan  
     password: bor
 
 Doctor Email:
