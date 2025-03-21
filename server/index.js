@@ -11,7 +11,9 @@ connectDB();
 
 app.use(
   cors({
-   origin:["https://appointment-system-chvt.vercel.app/"],
+   origin: "https://appointment-system-7oh3.vercel.app",
+   methods: ["GET", "POST", "PUT", "DELETE"],
+   allowedHeaders: ["Content-Type", "Authorization"]
     credentials: true,
   })
 );
