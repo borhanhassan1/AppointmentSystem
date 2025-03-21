@@ -1,5 +1,19 @@
 Medical Appointment System
 
+
+Patient Email:
+    username: borhan
+    password: bor
+
+Doctor Email:
+    username: doctor
+    password: bor
+
+Admin Email:
+    username: admin
+    password: bor
+
+
 Tech Stack
   Frontend: React.js, React Router, Axios, Bootstrap
   Backend: Node.js, Express.js, Mongoose
