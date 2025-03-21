@@ -11,7 +11,7 @@ connectDB();
 
 app.use(
   cors({
-   "https://appointment-system-chvt.vercel.app" || "http://localhost:3000",
+   origin:["https://appointment-system-chvt.vercel.app/"],
     credentials: true,
   })
 );
