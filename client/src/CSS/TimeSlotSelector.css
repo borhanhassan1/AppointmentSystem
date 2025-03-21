@@ -1,52 +1,77 @@
 .time-slot-container {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
     font-family: Arial, sans-serif;
 }
 
-.time-group {   
+.date-picker-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.error-message {
+    color: #dc3545;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.time-selection-section h3 {
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.time-group {
+    margin-bottom: 25px;
 }
 
 .time-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-h3 {
-    margin: 5px 0;
-    font-size: 18px;
-    color: rgb(153, 40, 59);
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .time-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
 .time-slot {
-    padding: 10px 15px;
-    border: 2px solid orange;
-    border-radius: 5px;
-    background: white;
-    color: orange;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f8f9fa;
     cursor: pointer;
-    transition: 0.3s;
-    font-size: 14px;
+    transition: all 0.2s;
 }
 
-.time-slot:hover {
-    background: orange;
-    color: white;
+.time-slot:hover:not(:disabled) {
+    background: #e9ecef;
 }
 
-.selected {
+.time-slot.selected {
     background: orange;
     color: white;
-    font-weight: bold;
+    border-color: orange;
+}
+
+.time-slot.booked {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+    cursor: not-allowed;
+}
+
+.react-datepicker-wrapper {
+    display: block;
+    margin-top: 10px;
+}
+
+.react-datepicker__input-container input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
 }
