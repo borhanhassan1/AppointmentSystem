@@ -5,13 +5,13 @@ Patient Email:
     username: borhan  
     password: bor
 
-Doctor Email:
-    username: doctor
-    password: bor
+Doctor Email:  
+    username: doctor  
+    password: bor  
 
-Admin Email:
-    username: admin
-    password: bor
+Admin Email:  
+    username: admin  
+    password: bor  
 
 
 Tech Stack
